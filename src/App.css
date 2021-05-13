@@ -1,38 +1,106 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 21vw;
+  height: 100vh;
+  margin-left: 5%;
+  box-shadow: 1px 1px 5px 1px black;
+  background-image: url("../src/res/img/iphone.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.App-link {
-  color: #61dafb;
+.PhoneScreen {
+  background-image: linear-gradient(
+    140deg,
+    #d5ff65 0,
+    #bcff6a 12.5%,
+    #9bff6c 25%,
+    #70ff6c 37.5%,
+    #1ef369 50%,
+    #00e569 62.5%,
+    #00da6e 75%,
+    #00d378 87.5%,
+    #00cf87 100%
+  );
+  width: 89%;
+  height: 67%;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border: 1px solid;
+  border-color: black;
+  /* box-shadow: 1px 1px 5px 1px magenta; */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.PhoneScreen3 {
+  background-image: linear-gradient(
+    140deg,
+    #d5ff65 0,
+    #bcff6a 12.5%,
+    #9bff6c 25%,
+    #70ff6c 37.5%,
+    #1ef369 50%,
+    #00e569 62.5%,
+    #00da6e 75%,
+    #00d378 87.5%,
+    #00cf87 100%
+  );
+  width: 89%;
+  height: 67%;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border: 1px solid;
+  border-color: black;
+  /* box-shadow: 1px 1px 5px 1px magenta; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home-button {
+  position: absolute;
+  /* box-shadow: 1px 1px 5px 1px magenta; */
+  width: 32px;
+  height: 32px;
+  bottom: 70px;
+  border-radius: 50%;
+}
+
+#input-phone-number {
+  background-color: rgba(255, 255, 255, 0.01);
+  font-size: 25px;
+  width: 80%;
+  border: none;
+  outline: none;
+  border-bottom: solid;
+  border-bottom-width: thin;
+  margin: 10px;
+}
+
+#phone-numbers-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+#number-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 1px 1px 5px 1px black;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
 }

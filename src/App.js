@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import MainScreen from "./components/MainScreen";
+import NumberScreen from "./components/NumberScreen";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <MainScreen />
+          </Route>
+          <Route path="/number-screen">
+            <NumberScreen />
+          </Route>
+          <Route path="/scr3">
+            <Screen3 />
+          </Route>
+        </Switch>
+
+        <Link to="/" id="home-button">
+        </Link>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+const Screen3 = () => {
+  return (
+    <div className="PhoneScreen3">
+      <h1>Pantalla 3 </h1>
+      <Link to="/">Ir a Home</Link>
+    </div>
+  );
+};
+
+// export default App;
