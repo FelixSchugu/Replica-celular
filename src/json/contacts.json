@@ -1,0 +1,57 @@
+[
+  {
+    "name": "John Doe",
+    "phoneNumber": 1234567,
+    "chat": [
+      { "sender": "1234567", "text": "Hola", "date": "2021-03-25T12:16:00" },
+      {
+        "sender": "client",
+        "text": "hola como va?",
+        "date": "2021-03-25T12:17:00"
+      }
+    ]
+  },
+  { "name": "Mark Knopfler", "phoneNumber": 1235464, "chat": [] },
+  { "name": "Mick Jagger", "phoneNumber": 65487654, "chat": [] },
+  { "name": "John Lennon", "phoneNumber": 65487654, "chat": [] },
+  { "name": "Fito Paez", "phoneNumber": 65487654, "chat": [] },
+  {
+    "name": "Charly Garcia",
+    "phoneNumber": 65487654,
+    "chat": [
+      {
+        "sender": "client",
+        "text": "Hola",
+        "date": "2021-03-25T12:16:00"
+      },
+      {
+        "sender": "65487654",
+        "text": "Hola! ¿Como estas?",
+        "date": "2021-03-25T12:17:00"
+      },
+
+      {
+        "sender": "client",
+        "text": "Bien y vos",
+        "date": "2021-03-25T12:18:00"
+      },
+      {
+        "sender": "65487654",
+        "text": "Todo bien!",
+        "date": "2021-03-25T12:19:00"
+      },
+      {
+        "sender": "65487654",
+        "text": "Aca programando en react  hshddss ahdasdsahd sdhasdhasdhasdhasdashd SD",
+        "date": "2021-03-25T12:20:00"
+      },
+
+      { "sender": "65487654", "text": "Piola", "date": "2021-03-25T12:20:00" }
+    ]
+  },
+  { "name": "Gustavo Cerati", "phoneNumber": 65487654, "chat": [] },
+  { "name": "Paul McCartney", "phoneNumber": 65487654, "chat": [] },
+  { "name": "Ringo Starr", "phoneNumber": 65487654, "chat": [] },
+  { "name": "George Harrison", "phoneNumber": 65487654, "chat": [] },
+  { "name": "Freddy Mercury", "phoneNumber": 65487654, "chat": [] }
+]
