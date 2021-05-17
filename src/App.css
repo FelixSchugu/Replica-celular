@@ -38,11 +38,14 @@
   background-size: cover;
 }
 
+#wallpaper-screen {
+  background-image: url("../src/res/img//wallpaperMain.jpg");
+}
+
 #home-button {
   position: absolute;
   width: 32px;
   height: 32px;
   bottom: 60px;
   border-radius: 50%;
-  box-shadow: 1px 1px 5px 1px magenta;
 }

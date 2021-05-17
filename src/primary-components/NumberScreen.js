@@ -2,6 +2,7 @@ import { useState } from "react";
 import callIcon from "../res/icons/accept.png";
 import PhoneScreen from "../molecules/PhoneScreen";
 import retourIcon from "../res/icons/retour.png";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const numbers = [
@@ -33,12 +34,11 @@ const NumberScreen = () => {
   };
 
   return (
-    <PhoneScreen bgColor="bg-gray-200" layout="flex" flexDisposition="flex-col">
+    <PhoneScreen bgColor="bg-bgMain" layout="flex" flexDisposition="flex-col">
       <div className="flex flex-row h-10 w-full mt mb-2">
         <input
           placeholder="Ingrese numero"
           className="p-2 ml-2 focus:outline-none bg-gray-200 border-b border-black text-xl w-3/4"
-          
           defaultValue={input}
         ></input>
         <button className="focus:outline-none" onClick={() => del()}>
@@ -54,7 +54,7 @@ const NumberScreen = () => {
         {numbers.map((number) => (
           <button
             key={number.num}
-            className="bg-blue-600 rounded-full h-16 w-16 shadow-lg border-2 focus:outline-none  border-blue-100"
+            className="bg-borderGray rounded-full h-16 w-16 shadow-md focus:outline-none"
             onClick={(e) => write(e.currentTarget.value)}
             value={number.num}
           >
@@ -64,14 +64,20 @@ const NumberScreen = () => {
         ))}
       </div>
 
-      <button className="self-center focus:outline-none rounded-full border-2 ">
+      <Link
+        className="self-center focus:outline-none rounded-full "
+        to={{
+          pathname: `${input.length > 0 ? "/call-screen" : ""}`,
+          state: { name: " ", number: input },
+        }}
+      >
         <img
           src={callIcon}
           width="50"
           alt=""
-          className="shadow-lg rounded-full border-2 border-green-300"
+          className="shadow-lg rounded-full"
         />
-      </button>
+      </Link>
     </PhoneScreen>
   );
 };

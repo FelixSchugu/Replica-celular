@@ -1,12 +1,15 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import MainScreen from "./components/MainScreen";
-import NumberScreen from "./components/NumberScreen";
-import MessagesScreen from "./components/MessagesScreen";
-import ContactsScreen from "./components/ContactsScreen";
-import ContactPage from "./components/ContactPage";
-import ChatScreen from "./components/ChatScreen";
-import CallScreen from "./components/CallScreen";
+import MainScreen from "./primary-components/MainScreen";
+import NumberScreen from "./primary-components/NumberScreen";
+import MessagesScreen from "./primary-components/MessagesScreen";
+import ContactsScreen from "./primary-components/ContactsScreen";
+import ContactPage from "./secondary-components/ContactPage";
+import ChatScreen from "./secondary-components/ChatScreen";
+import CallScreen from "./secondary-components/CallScreen";
+import NewContact from "./secondary-components/NewContact";
+import NewMessage from "./secondary-components/NewMessage";
+import NotesScreen from "./primary-components/NotesScreen";
 
 export default function App() {
   return (
@@ -25,7 +28,6 @@ export default function App() {
           <Route path="/contacts-screen">
             <ContactsScreen />
           </Route>
-
           <Route path="/contact-page">
             <ContactPage />
           </Route>
@@ -36,6 +38,18 @@ export default function App() {
 
           <Route path="/call-screen">
             <CallScreen />
+          </Route>
+
+          <Route path="/new-contact">
+            <NewContact />
+          </Route>
+
+          <Route path="/new-message">
+            <NewMessage />
+          </Route>
+
+          <Route path="/notes-screen">
+            <NotesScreen />
           </Route>
         </Switch>
 
