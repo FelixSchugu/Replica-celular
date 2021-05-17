@@ -4,6 +4,10 @@ import messages from "../res/icons/messages.png";
 import notes from "../res/icons/notes.svg";
 import phone from "../res/icons/Phone.ico";
 import PhoneScreen from "../molecules/PhoneScreen";
+import tw from "twin.macro"
+
+const IconsDiv = tw.div`self-end flex flex-row justify-center`
+
 
 const MainScreen = () => {
   return (
@@ -14,7 +18,7 @@ const MainScreen = () => {
       wallpaper={true}
       navTextColor="text-bgMain"
     >
-      <div className="self-end flex flex-row justify-center">
+      <IconsDiv>
         <Link to="/number-screen" style={{ margin: 5 }}>
           <img src={phone} width="45" height="45" alt="" />
         </Link>
@@ -30,7 +34,7 @@ const MainScreen = () => {
         <Link to="/notes-screen" style={{ margin: 5 }}>
           <img src={notes} width="45" height="45" alt="" />
         </Link>
-      </div>
+      </IconsDiv>
     </PhoneScreen>
   );
 };

@@ -4,6 +4,14 @@ import TitleNav from "../atoms/TitleNav";
 import { Link } from "react-router-dom";
 import json from "../json/contacts.json";
 import contactImg from "../res/icons/Michael.png";
+import tw from "twin.macro";
+
+const ContainerDIv = tw.div`flex flex-col bg-bgMain h-full`;
+const MessageDiv = tw.div`flex flex-row items-center border-b h-12 border-borderLightGray`;
+const MessageElementsDiv = tw.div`ml-2 grid grid-cols-2 w-full justify-items-start text-left`;
+const ContactTitle = tw.div`justify-self-start font-semibold text-sm w-40`;
+const ContactChatTitle = tw.h1`justify-self-end mr-2 text-xs`;
+const ContactLastMsgTitle = tw.h1`justify-self-start col-span-2 text-xs`;
 
 const MessagesScreen = () => {
   const [msgList, setMsgList] = useState([]);
@@ -32,8 +40,13 @@ const MessagesScreen = () => {
 
   return (
     <PhoneScreen layout="flex" flexDisposition="flex-col" bgColor="bg-navGray">
-      <TitleNav title={`Chats`} hasIconAdd={true} backRoute={"/"} iconAddRoute={"/new-message"} />
-      <div className="flex flex-col bg-bgMain h-full">
+      <TitleNav
+        title={`Chats`}
+        hasIconAdd={true}
+        backRoute={"/"}
+        iconAddRoute={"/new-message"}
+      />
+      <ContainerDIv>
         {msgList.map((contact) => (
           <Link
             className="w-full"
@@ -42,32 +55,30 @@ const MessagesScreen = () => {
               state: { name: contact.name, chat: contact.chat },
             }}
           >
-            <div className="flex flex-row items-center border-b h-12 border-borderLightGray">
+            <MessageDiv>
               <img
                 src={contactImg}
                 width="25"
                 className="ml-2 rounded-full"
                 alt=""
               />
-              <div className="ml-2 grid grid-cols-2 w-full justify-items-start text-left">
-                <h1 className=" justify-self-start font-semibold text-sm w-40">
-                  {contact.name}
-                </h1>
-                <h1 className=" justify-self-end mr-2 text-xs">
+              <MessageElementsDiv>
+                <ContactTitle>{contact.name}</ContactTitle>
+                <ContactChatTitle>
                   {showLastDate(contact.chat)}
-                </h1>
-                <h1 className=" justify-self-start col-span-2 text-xs">
+                </ContactChatTitle>
+                <ContactLastMsgTitle>
                   {`${
                     contact.chat[contact.chat.length - 1].sender === "client"
                       ? "Tú:"
-                      : ""    // Muestra "Tú" si fuiste el úñtimo en escribir un mensaje 
+                      : "" // Muestra "Tú" si fuiste el úñtimo en escribir un mensaje
                   }  ${showLastMessage(contact.chat)}`}
-                </h1>
-              </div>
-            </div>
+                </ContactLastMsgTitle>
+              </MessageElementsDiv>
+            </MessageDiv>
           </Link>
         ))}
-      </div>
+      </ContainerDIv>
     </PhoneScreen>
   );
 };
