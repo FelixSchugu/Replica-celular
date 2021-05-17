@@ -5,9 +5,8 @@
   justify-content: center;
   align-items: center;
   width: 295px;
-  height: 100vh;
+  height: 680px;
   margin-left: 5%;
-  box-shadow: 1px 1px 5px 1px black;
   background-image: url("../src/res/img/iphone.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,6 +45,7 @@
   position: absolute;
   width: 32px;
   height: 32px;
-  bottom: 60px;
+  bottom: 40px;
   border-radius: 50%;
+  /* box-shadow: 1px 1px 5px 1px magenta; */
 }
