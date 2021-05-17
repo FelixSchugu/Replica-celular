@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import json from "../json/contacts.json";
 import TitleNav from "../atoms/TitleNav";
 import contactIcon from "../res/icons/Michael.png";
+import tw from "twin.macro";
+
+const MainDiv = tw.div`overflow-auto bg-bgMain w-full h-full`;
+const ContactDiv = tw.div`flex flex-row items-center border-b border-borderLightGray  m-2 text-left h-8 shadow-sm p-2`;
+const ContactTitle = tw.h1`ml-2 text-sm`;
 
 const ContactsScreen = () => {
   const [contacts, setContacts] = useState([]);
@@ -31,7 +36,7 @@ const ContactsScreen = () => {
         backRoute={"/"}
         iconAddRoute={"/new-contact"}
       />
-      <div className="overflow-auto bg-bgMain w-full h-full">
+      <MainDiv>
         {contacts.map((contact, idx) => (
           <Link
             to={{
@@ -43,18 +48,18 @@ const ContactsScreen = () => {
               }, // Se pasa como estado para la pagina de contactos
             }}
           >
-            <div className="flex flex-row items-center border-b border-borderLightGray bg-indigo-100 m-2 text-left h-8 shadow-sm p-2">
+            <ContactDiv>
               <img
                 src={contactIcon}
                 width="25"
                 className="rounded-full"
                 alt=""
               />
-              <h1 className="ml-2 text-sm">{contact.name}</h1>
-            </div>
+              <ContactTitle>{contact.name}</ContactTitle>
+            </ContactDiv>
           </Link>
         ))}
-      </div>
+      </MainDiv>
     </PhoneScreen>
   );
 };

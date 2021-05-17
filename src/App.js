@@ -16,41 +16,16 @@ export default function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/">
-            <MainScreen />
-          </Route>
-          <Route path="/number-screen">
-            <NumberScreen />
-          </Route>
-          <Route path="/messages-screen">
-            <MessagesScreen />
-          </Route>
-          <Route path="/contacts-screen">
-            <ContactsScreen />
-          </Route>
-          <Route path="/contact-page">
-            <ContactPage />
-          </Route>
-
-          <Route path="/chat-screen">
-            <ChatScreen />
-          </Route>
-
-          <Route path="/call-screen">
-            <CallScreen />
-          </Route>
-
-          <Route path="/new-contact">
-            <NewContact />
-          </Route>
-
-          <Route path="/new-message">
-            <NewMessage />
-          </Route>
-
-          <Route path="/notes-screen">
-            <NotesScreen />
-          </Route>
+          <Route exact path="/" component={MainScreen} />
+          <Route path="/number-screen" component={NumberScreen} />
+          <Route path="/messages-screen" component={MessagesScreen} />
+          <Route path="/contacts-screen" component={ContactsScreen} />
+          <Route path="/contact-page" component={ContactPage}/>
+          <Route path="/chat-screen" component={ChatScreen}/>
+          <Route path="/call-screen" component={CallScreen} />
+          <Route path="/new-contact" component={NewContact} />
+          <Route path="/new-message" component={NewMessage}/>
+          <Route path="/notes-screen" component={NotesScreen} />
         </Switch>
 
         <Link to="/" id="home-button"></Link>

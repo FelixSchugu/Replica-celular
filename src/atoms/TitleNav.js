@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BackButton from "../atoms/BackButton";
 import iconAdd from "../res/icons/mas.png";
+import tw from "twin.macro";
+
+const MainNav = tw.nav`grid grid-cols-3 h-12  border-b border-borderGray text-xl items-center justify-center`;
 
 const TitleNav = ({
   title, // Es el título que va en el medio del navBar
@@ -13,7 +16,7 @@ const TitleNav = ({
   // Option se renderiza si se pasa por props.
 }) => {
   return (
-    <nav className="grid grid-cols-3 bg-blue-600 h-12 text-white border-b border-borderGray text-xl items-center justify-center">
+    <MainNav>
       <BackButton route={backRoute} />
       <div>
         <h1 className="text-base">{title}</h1>
@@ -34,7 +37,7 @@ const TitleNav = ({
           </button>
         )}
       </div>
-    </nav>
+    </MainNav>
   );
 };
 

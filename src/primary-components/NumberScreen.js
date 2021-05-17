@@ -4,6 +4,16 @@ import PhoneScreen from "../molecules/PhoneScreen";
 import retourIcon from "../res/icons/retour.png";
 import { Link } from "react-router-dom";
 import "../App.css";
+import tw from "twin.macro";
+
+const MainDiv = tw.div`flex flex-row h-10 w-full mb-2`;
+const NumInput = tw.input`p-2 ml-2 focus:outline-none  border-b border-black text-xl w-3/4`;
+const NumContainer = tw.div`grid grid-rows-4 grid-cols-3 gap-4 p-2`;
+const ButtonNum = tw.button`bg-borderGray rounded-full h-16 w-16 shadow-md focus:outline-none`;
+const ButtonNumTitle = tw.h1`text-2xl font-bold`;
+const ButtonCharTitle = tw.h4`text-sm font-bold mb-1`;
+const IconDelete = tw.img`w-5 h-5 self-center ml-4`;
+const CallIconImg = tw.img`shadow-lg rounded-full`;
 
 const numbers = [
   { num: 1, char: "Voice" },
@@ -35,34 +45,25 @@ const NumberScreen = () => {
 
   return (
     <PhoneScreen bgColor="bg-bgMain" layout="flex" flexDisposition="flex-col">
-      <div className="flex flex-row h-10 w-full mt mb-2">
-        <input
-          placeholder="Ingrese numero"
-          className="p-2 ml-2 focus:outline-none bg-gray-200 border-b border-black text-xl w-3/4"
-          defaultValue={input}
-        ></input>
+      <MainDiv>
+        <NumInput placeholder="Ingrese numero" defaultValue={input}></NumInput>
         <button className="focus:outline-none" onClick={() => del()}>
-          <img
-            src={retourIcon}
-            alt=""
-            className="w-5 h-5 self-center ml-4 "
-          ></img>
+          <IconDelete src={retourIcon} alt=""></IconDelete>
         </button>
-      </div>
+      </MainDiv>
 
-      <div className="grid grid-rows-4 grid-cols-3 gap-4 p-2">
+      <NumContainer>
         {numbers.map((number) => (
-          <button
+          <ButtonNum
             key={number.num}
-            className="bg-borderGray rounded-full h-16 w-16 shadow-md focus:outline-none"
             onClick={(e) => write(e.currentTarget.value)}
             value={number.num}
           >
-            <h1 className="text-2xl text-white font-bold">{number.num}</h1>
-            <h4 className="text-sm text-white font-bold mb-1">{number.char}</h4>
-          </button>
+            <ButtonNumTitle>{number.num}</ButtonNumTitle>
+            <ButtonCharTitle>{number.char}</ButtonCharTitle>
+          </ButtonNum>
         ))}
-      </div>
+      </NumContainer>
 
       <Link
         className="self-center focus:outline-none rounded-full "
@@ -71,12 +72,7 @@ const NumberScreen = () => {
           state: { name: " ", number: input },
         }}
       >
-        <img
-          src={callIcon}
-          width="50"
-          alt=""
-          className="shadow-lg rounded-full"
-        />
+        <CallIconImg src={callIcon} width="50" alt="" />
       </Link>
     </PhoneScreen>
   );
