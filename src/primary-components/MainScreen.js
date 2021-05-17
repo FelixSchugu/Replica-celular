@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import contacts from "../res/icons/contacts.svg";
-import messages from "../res/icons/Messages.png";
+import messages from "../res/icons/messages.png";
 import notes from "../res/icons/notes.svg";
 import phone from "../res/icons/Phone.ico";
 import PhoneScreen from "../molecules/PhoneScreen";

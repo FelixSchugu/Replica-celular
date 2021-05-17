@@ -3,7 +3,6 @@ import PhoneScreen from "../molecules/PhoneScreen";
 import { Link } from "react-router-dom";
 import json from "../json/contacts.json";
 import TitleNav from "../atoms/TitleNav";
-import iconAdd from "../res/icons/mas.png";
 import contactIcon from "../res/icons/Michael.png";
 
 const ContactsScreen = () => {
