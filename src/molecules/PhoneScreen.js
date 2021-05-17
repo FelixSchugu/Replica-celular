@@ -11,7 +11,9 @@ const PhoneScreen = ({
   align,
   navBgColor,
   navTextColor,
+  wallpaper,
 }) => {
+
   //Principales
   const ifGgColor = bgColor || "bg-white"; // Background color
   const ifLayout = layout || ""; // Layout a usar como flex o grid
@@ -28,11 +30,13 @@ const PhoneScreen = ({
   const ifAlign = align || ""; //Alineación vertical
 
   // navbar
-  const ifNavBgColor = navBgColor || "";
-  const ifNavTextColor = navTextColor || "";
+  const ifNavBgColor = navBgColor || ""; // Es el color de la barra de estado
+  const ifNavTextColor = navTextColor || ""; // Es el color del texto de la barra de estado del teléfono
+
+  
 
   return (
-    <div
+    <div // Este div contiene todo lo que va adentro de la pantalla del celular despues de la barra de estado 
       className={` h-altoPantalla border border-black w-anchoPantalla 
       ${ifGgColor} 
       ${ifLayout} 
@@ -42,15 +46,16 @@ const PhoneScreen = ({
       ${ifGridCol}
       ${ifGridRow}
       `}
+      id={wallpaper ? "wallpaper-screen" : ""}
     >
-      <div
+      <div // Este div contiene la barra de estado del teléfono 
         className={`grid grid-cols-3 items-center text-sm w-full self-start font-bold  
         ${ifNavBgColor} 
         ${ifNavTextColor}`}
       >
-        <p className="justify-self-start ml-2  ">Claro 4G</p>
-        <p className="justify-self-center">15:56</p>
-        <p className="justify-self-end mr-2">Bat.: 80%</p>
+        <p className="justify-self-start ml-2 text-xs">Claro 4G</p>
+        <p className="justify-self-center text-xs">{"16:00"}</p>
+        <p className="justify-self-end mr-2 text-xs">Bat.: 80%</p>
       </div>
       {children}
     </div>
