@@ -2,17 +2,12 @@ import React from "react";
 import TitleNav from "../atoms/TitleNav";
 import PhoneScreen from "../molecules/PhoneScreen";
 
-const NotesScreen = () => {
+function NewNote() {
   return (
     <PhoneScreen bgColor="bg-navGray">
-      <TitleNav
-        title={"Notas"}
-        hasIconAdd={true}
-        backRoute={"/"}
-        iconAddRoute={"/new-note"}
-      />
+      <TitleNav title={"Nueva nota "} backRoute={"/notes-screen"}/>
     </PhoneScreen>
   );
-};
+}
 
-export default NotesScreen;
+export default NewNote;

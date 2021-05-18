@@ -7,7 +7,7 @@ import contactIcon from "../res/icons/Michael.png";
 import tw from "twin.macro";
 
 const MainDiv = tw.div`overflow-auto bg-bgMain w-full h-full`;
-const ContactDiv = tw.div`flex flex-row items-center border-b border-borderLightGray  m-2 text-left h-8 shadow-sm p-2`;
+const ContactDiv = tw.div`flex flex-row items-center border-b border-borderLightGray m-2 text-left h-8 shadow-sm p-2`;
 const ContactTitle = tw.h1`ml-2 text-sm`;
 
 const ContactsScreen = () => {
@@ -36,7 +36,7 @@ const ContactsScreen = () => {
         backRoute={"/"}
         iconAddRoute={"/new-contact"}
       />
-      <MainDiv>
+      <MainDiv className="Contact-div">
         {contacts.map((contact, idx) => (
           <Link
             to={{

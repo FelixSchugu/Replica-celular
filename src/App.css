@@ -13,28 +13,16 @@
   background-position: center;
 }
 
-.PhoneScreen {
-  /*  background-image: linear-gradient(
-    140deg,
-    #d5ff65 0,
-    #bcff6a 12.5%,
-    #9bff6c 25%,
-    #70ff6c 37.5%,
-    #1ef369 50%,
-    #00e569 62.5%,
-    #00da6e 75%,
-    #00d378 87.5%,
-    #00cf87 100%
-  );*/
-  /* width: 89%;
-  height: 67%;  */
-  /* padding-bottom: 3px;
-  padding-top: 3px; */
-  /* border: 1px solid;
-  border-color: black; */
-  /* box-shadow: 1px 1px 5px 1px magenta; */
-  background-repeat: no-repeat;
-  background-size: cover;
+div::-webkit-scrollbar {
+  width: 5px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #646464;
+}
+
+div::-webkit-scrollbar-track-piece {
+  background-color: rgba(255, 255, 255, 0);
 }
 
 #wallpaper-screen {
@@ -47,5 +35,10 @@
   height: 32px;
   bottom: 40px;
   border-radius: 50%;
-  /* box-shadow: 1px 1px 5px 1px magenta; */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

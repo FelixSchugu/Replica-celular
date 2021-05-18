@@ -3,6 +3,9 @@ import TitleNav from "../atoms/TitleNav";
 import PhoneScreen from "../molecules/PhoneScreen";
 import json from "../json/contacts.json";
 import { Link } from "react-router-dom";
+import tw from "twin.macro"
+
+const SimpleListDiv = tw.div`overflow-auto bg-bgMain w-full h-full flex flex-col items-start`
 
 const NewMessage = () => {
   const [contactList, setContactList] = useState([]);
@@ -25,7 +28,7 @@ const NewMessage = () => {
   return (
     <PhoneScreen bgColor="bg-navGray" layout="flex" flexDisposition="flex-col">
       <TitleNav title={"Nuevo mensaje"} backRoute={"/messages-screen"} />
-      <div className="overflow-auto bg-bgMain w-full h-full flex flex-col items-start">
+      <SimpleListDiv>
         {contactList.map((contact) => (
           <Link
             to={{
@@ -37,7 +40,7 @@ const NewMessage = () => {
             <h1> {contact.name}</h1>
           </Link>
         ))}
-      </div>
+      </SimpleListDiv>
     </PhoneScreen>
   );
 };

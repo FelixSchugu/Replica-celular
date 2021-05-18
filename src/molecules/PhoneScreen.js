@@ -1,4 +1,8 @@
 import React from "react";
+import StatusBar from "../molecules/StatusBar";
+import tw from "twin.macro";
+
+const DefaultDiv = tw.div`h-altoPantalla border border-black w-anchoPantalla`;
 
 const PhoneScreen = ({
   children,
@@ -13,7 +17,6 @@ const PhoneScreen = ({
   navTextColor,
   wallpaper,
 }) => {
-
   //Principales
   const ifGgColor = bgColor || "bg-white"; // Background color
   const ifLayout = layout || ""; // Layout a usar como flex o grid
@@ -33,11 +36,9 @@ const PhoneScreen = ({
   const ifNavBgColor = navBgColor || ""; // Es el color de la barra de estado
   const ifNavTextColor = navTextColor || ""; // Es el color del texto de la barra de estado del teléfono
 
-  
-
   return (
-    <div // Este div contiene todo lo que va adentro de la pantalla del celular despues de la barra de estado 
-      className={` h-altoPantalla border border-black w-anchoPantalla 
+    <DefaultDiv // Este div contiene todo lo que va adentro de la pantalla del celular despues de la barra de estado
+      className={`
       ${ifGgColor} 
       ${ifLayout} 
       ${ifFlexDisposition}
@@ -46,19 +47,11 @@ const PhoneScreen = ({
       ${ifGridCol}
       ${ifGridRow}
       `}
-      id={wallpaper ? "wallpaper-screen" : ""}
+      id={wallpaper ? "wallpaper-screen" : ""} // pone la imagen de wallpaper si el prop wallaper es true (pantalla principal)
     >
-      <div // Este div contiene la barra de estado del teléfono 
-        className={`grid grid-cols-3 items-center text-sm w-full self-start font-bold  
-        ${ifNavBgColor} 
-        ${ifNavTextColor}`}
-      >
-        <p className="justify-self-start ml-2 text-xs">Claro 4G</p>
-        <p className="justify-self-center text-xs">{"16:00"}</p>
-        <p className="justify-self-end mr-2 text-xs">Bat.: 80%</p>
-      </div>
+      <StatusBar bgColor={ifNavBgColor} textColor={ifNavTextColor} />
       {children}
-    </div>
+    </DefaultDiv>
   );
 };
 

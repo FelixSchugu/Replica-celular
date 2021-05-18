@@ -13,7 +13,7 @@ const NewContact = () => {
   const [number, setNumber] = useState("");
 
   const validate = () => {};
-  // El prop "option" del "TitleNav" un boton y acpeta un objeto con dos variables: "name" y "function"
+  // El prop "option" del "TitleNav" es un boton y acpeta un objeto con dos variables: "name" y "function"
   // En function se pasa la función que se va a ejecutar cuando se presione el boton.
 
   return (
